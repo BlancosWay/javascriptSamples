@@ -12,7 +12,7 @@ function deepComparision(a, b) {
 
     for (var prop in b) {
         countPropsB += 1;
-        if (!(prop in a) || !deepEqual(a[prop], b[prop]))
+        if (!(prop in a) || !deepComparision(a[prop], b[prop]))
             return false;
     }
 
