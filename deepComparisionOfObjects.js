@@ -5,16 +5,16 @@ function deepComparision(a, b) {
             b == null || typeof b != "object")
         return false;
 
-    var countA = 0, countB = 0;
+    var countPropsinA = 0, countPropsinB = 0;
 
     for (var prop in a)
-        countA += 1;
+        countPropsinA += 1;
 
     for (var prop in b) {
-        countB += 1;
+        countPropsB += 1;
         if (!(prop in a) || !deepEqual(a[prop], b[prop]))
             return false;
     }
 
-    return countA == countB;
+    return countPropsinA == countPropsinB;
 }
